@@ -40,12 +40,26 @@ public class ArrayListReview {
 
 
         // 3. for each loop
+        System.out.println("Printing with for_each loop............");
+        for(Student student: students){
+            System.out.println(student);
+        }
 
 
         // 4. Lambda
+        System.out.println("Printing with lambda............");
+        students.forEach(student-> System.out.println(student));
 
 
         // Sorting Elements in List using comparator interface
+        System.out.println("Sorting with Comparator Interface by Id Desc....");
+        Collections.sort(students, new sortByIdDesc());
+        students.forEach(student->System.out.println(student));
+
+        System.out.println("Sorting with Comparator Interface by Name Desc....");
+        Collections.sort(students, new sortByNameDesc());
+        students.forEach(student->System.out.println(student));
+
 
 
     }
