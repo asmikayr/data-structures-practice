@@ -13,6 +13,10 @@ public class SinglyLinkedListApp {
         myList.addFirst(50);
         myList.printNodes();
         System.out.println(myList.indexOf(1));
+        System.out.println(myList.getKthFromLast(9));
+        myList.printNodes();
+        myList.removeKthFromLast(4);
+        myList.printNodes();
 
     }
 }
