@@ -29,6 +29,7 @@ public class MySinglyLikedList {
             node.next=head;
             head=node;
         }
+        size++;
     }
 
 
@@ -97,31 +98,65 @@ public class MySinglyLikedList {
     public int getKthFromLast(int k){
         // write your code here
 
-
         Node p1 = head;
         Node p2 = head;
 
-        int count = 0;
-
-        while(count < k){
+        for (int i = 0; i < k-1; i++) {
             p2 = p2.next;
-            count++;
+
         }
 
-        while(p2 != null) {
-            p1 = p1.next;
-            p2 = p2.next;
+        while(p2.next != null){
+            p1=p1.next;
+            p2=p2.next;
         }
 
         return p1.id;
     }
 
     public void removeKthFromLast(int k) {
+// write your code here…
 
-        deleteById(getKthFromLast(k));
-// write your code here….
+        //create three pointers
+        Node p1 = head;
+        Node p2 = head;
+        Node prev = null;
+        //move p2 k-1 times
+
+        for (int i = 0; i < k-1; i++) {
+            p2 = p2.next;
+
+        }
+
+        // move both pointers until p2 hits the last element
+        while(p2.next != null){
+            prev=p1;
+            p1=p1.next;
+            p2=p2.next;
+        }
+
+        //p1 is on the kth element from the last
+        //do delete operation
+        if(p1==head){
+            head = p1.next;
+            p1.next = null;
+            size--;
+        }else if(p1==tail){
+            tail = prev;
+            prev.next=null;
+            size--;
+        }else{
+            prev.next = p1.next;
+            p1.next = null;
+            size--;
+
+        }
+
+
+
+
+
     }
-
 
 
 }
