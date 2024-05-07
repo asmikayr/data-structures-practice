@@ -1,6 +1,6 @@
 public class ExprBalanceCheck {
     public static void main(String[] args) {
-        System.out.println(balanceCheck("(A*C) + ({V-M})"));
+        System.out.println(balanceCheck("()"));
     }
     public static boolean balanceCheck (String expr){
         // create a stack
@@ -11,14 +11,14 @@ public class ExprBalanceCheck {
             Character ch=expr.charAt(i);
             // filter non player chars
             if (ch!='('&& ch!='['&& ch!='{'&& ch!=')'&& ch!=']'&& ch!='}' ) continue ;
-            // if it is a symbol tobe processed
-               // if opening symbol push it to the stack
+            // if it is a symbol to be processed
+               //if opening symbol push it to the stack
             if(ch=='('|| ch=='['|| ch=='{') {
                 myStack.push(ch);
                 continue;
             }
             // at this point this is a closing symbol
-            // stack shouldnt be empty
+            // stack shouldn't be empty
             if (myStack.isEmpty()) return false;
             switch(ch) {
                 case ')':
