@@ -44,12 +44,17 @@ public class MyTree {
         preOrderTraversal(root.rightChild);//visit right subtree
 
     }
+    // InOrder Traversal of the tree
+    // Left-root-right
     void inOrderTraversal(TNode root){
        if(root==null) return; //termination
        inOrderTraversal(root.leftChild);
        System.out.print(root.value+", ");
        inOrderTraversal(root.rightChild);
     }
+
+    // PostOrder Traversal of the tree
+    // Left-right-root
     void postOrderTraversal(TNode root){
         if (root==null) return;// termination
         postOrderTraversal(root.leftChild); // branch and finish left subtree
