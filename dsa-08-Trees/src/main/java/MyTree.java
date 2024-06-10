@@ -61,15 +61,17 @@ public class MyTree {
         postOrderTraversal(root.rightChild); // branch and finish right subtree
         System.out.print(root.value+", ");  // visit root
     }
-    void levelOrderTraversal(){
-        if(root==null) return;
-        Queue<TNode>  queue=new LinkedList<>();
+
+
+    void levelOrderTraversal(TNode root){
+        if (root==null) return;
+        Queue<TNode> queue = new LinkedList<>();
         queue.add(root);
         while(!queue.isEmpty()){
-            TNode toVisit=queue.poll();
-            System.out.print(toVisit.value+", ");
-            if (toVisit.leftChild!=null) queue.add(toVisit.leftChild);
-            if (toVisit.rightChild!=null) queue.add(toVisit.rightChild);
+            TNode toVisit = queue.poll();
+            System.out.print(toVisit.value+",");
+            if(toVisit.leftChild!=null) queue.add((toVisit.leftChild));
+            if(toVisit.rightChild!=null) queue.add(toVisit.rightChild);
         }
     }
 
