@@ -7,5 +7,9 @@ public class TreeApp {
         }
         VisualizeTree.printTree(tree.root, null,false);
 
+        System.out.println("Pre-Order Traversal");
+
+        tree.preOrderTraversal(tree.root);
+
     }
 }

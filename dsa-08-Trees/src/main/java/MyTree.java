@@ -38,10 +38,11 @@ public class MyTree {
     // PreOrder Traversal of the tree
     // Root-Left-right
     void preOrderTraversal(TNode root){
-        if(root==null) return;// termination
-        System.out.print(root.value +", "); // visit root
-        preOrderTraversal(root.leftChild);  // visit left subtree
-        preOrderTraversal(root.rightChild); // visit right subtree
+        if(root==null) return; //termination; base condition
+        System.out.print(root.value + ", ");//visit root
+        preOrderTraversal(root.leftChild);//visit left subtree
+        preOrderTraversal(root.rightChild);//visit right subtree
+
     }
     void inOrderTraversal(TNode root){
         if (root==null) return; // termination
