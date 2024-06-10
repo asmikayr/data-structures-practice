@@ -10,6 +10,10 @@ public class TreeApp {
         System.out.println("Pre-Order Traversal");
 
         tree.preOrderTraversal(tree.root);
+        System.out.println();
+
+        System.out.println("In Order Traversal");
+        tree.inOrderTraversal(tree.root);
 
     }
 }

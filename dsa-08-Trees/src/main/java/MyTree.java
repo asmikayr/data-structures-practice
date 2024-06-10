@@ -45,10 +45,10 @@ public class MyTree {
 
     }
     void inOrderTraversal(TNode root){
-        if (root==null) return; // termination
-        inOrderTraversal(root.leftChild);
-        System.out.print(root.value+", ");
-        inOrderTraversal(root.rightChild);
+       if(root==null) return; //termination
+       inOrderTraversal(root.leftChild);
+       System.out.print(root.value+", ");
+       inOrderTraversal(root.rightChild);
     }
     void postOrderTraversal(TNode root){
         if (root==null) return;// termination
