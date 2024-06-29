@@ -34,22 +34,19 @@ public class MyHeap {
     }
 
     public int remove(){
-        if(size==0) throw new NoSuchElementException();
-        else{
-            int result=items[0];
-            items[0]=items[size-1];
-            size--;
+        if (size==0) throw new NoSuchElementException();
+        else {
+            int result= items[0];
+            items[0]=items[--size];
             bubbleDown();
             return result;
         }
-
     }
-
     public void bubbleDown(){
-        int index = 0;
+        int index=0;
         int largerChildIndex;
-        while(index<=size&&isValidParent(index)){
-            largerChildIndex = (largerChildIndex(index));
+        while (index<=size && !isValidParent(index)){
+            largerChildIndex=largerChildIndex(index);
             swap(index, largerChildIndex);
             index=largerChildIndex;
         }
@@ -57,10 +54,10 @@ public class MyHeap {
 
     public void printHeap(){
         for (int i = 0; i < size; i++) {
-            System.out.println(items[i] + ", ");
-            System.out.println();
-
+            System.out.print(items[i] + ", ");
         }
+
+        System.out.println();
     }
 
     public int leftChildIndex(int index){return index*2+1;}
@@ -91,7 +88,7 @@ public class MyHeap {
         else{
             boolean isValid=items[index]>=items[leftChildIndex(index)];
             if(hasRightChild(index)){
-                isValid=items[index]>=items[rightChildIndex(index)];
+                isValid= (items[index]>=items[leftChildIndex(index)]&&items[index]>=items[rightChildIndex(index)]);
             }
             return isValid;
         }
