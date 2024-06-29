@@ -74,7 +74,7 @@ public class MyHeap {
         //no child
         if(!hasLeftChild(index)) return index;
         //one child - left child
-        else if(!hasRightChild(index)) return leftChildIndex(index)
+        else if(!hasRightChild(index)) return leftChildIndex(index);
         else {
             return items[leftChildIndex(index)]>items[rightChildIndex(index)] ? leftChildIndex(index) : rightChildIndex(index);
         }
