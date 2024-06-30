@@ -19,5 +19,10 @@ public class HeapApp {
         heap.insert(130);
         heap.printHeap();
 
+        int[] numbers ={1,2,5,68,21,0};
+
+        MyHeap heap2 = new MyHeap(numbers);
+        heap2.printHeap();
+
     }
 }
