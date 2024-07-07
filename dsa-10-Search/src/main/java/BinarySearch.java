@@ -19,6 +19,21 @@ public class BinarySearch {
         return-1;
     }
 
+
+    public static int binarySearchIterative2(int[] arr, int n) {
+        int left = 0;
+        int right = arr.length-1;
+
+        while(left < right){
+            int middle = (left+right)/2;
+            if(arr[middle] == n) return middle;
+            if(n<arr[middle]) right = middle - 1;
+            else left = middle + 1;
+        }
+
+        return -1;
+    }
+
     public static int binarySearchRecursive (int[] array, int data){
         return binarySearchRecursive(array,data ,0,array.length-1 );
     }
